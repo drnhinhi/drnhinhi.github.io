@@ -2,173 +2,211 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    
-    <title>Dr. Nhinhi/ LOG.TXT ::</title> 
+    <meta name="keywords" content="homepage, pessoal, projetos, 2000s, retro, y2k, dr nhinhi">
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+    <title>.:*~*:._.:*~*:._ Dr. Nhinhi _.:*~*:._.:*~*:. </title> 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 
 <style>
     :root {
-        --primary-color: #00ffff;
-        --secondary-color: #ff00ff;
-        --container-bg: rgba(10, 10, 20, 0.85);
-        --font-family: 'Silkscreen', cursive;
+        --primary-color: #00ff00; 
+        --secondary-color: #ff00ff; 
+        --accent-color: #0080ff; 
+        --container-bg: rgba(10, 20, 10, 0.75);
+        --font-family-pixel: 'Silkscreen', cursive;
+        --font-family-mono: 'Courier New', Courier, monospace;
     }
+
+    body::after {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: repeating-linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3) 1px, transparent 1px, transparent 2px);
+        pointer-events: none;
+        z-index: 9999;
+    }
+
     html, body {
-        height: 100%; margin: 0; padding: 0; overflow: hidden;
+        height: 100%; margin: 0; padding: 0;
     }
+
     body {
-        background-color: #000; /* Cor de fundo caso a imagem falhe */
-        background-image: url('pink.png');
-        background-repeat: repeat; /* ESSENCIAL: Repete a imagem horizontal e verticalmente */
-        background-size: auto;     /* Garante que a imagem mantenha seu tamanho original para a repetição */
+        background-color: #000;
+        background-image: url('pink.png'); 
+        background-repeat: repeat;
         color: var(--primary-color);
-        font-family: var(--font-family);
+        font-family: var(--font-family-mono); 
         cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAPFJREFUOE+11L0NAjEMBNC/tZBFcAmKNpFdwNqEG7gCN6CpI+gGTtCoIXQLeAgUruIMbeA9TZIkk8H2k3wSLy+ZHJeiyBOnbDsP2G4u62jXfT3axnPqS2gP227sFPl3P293O8BzBjns8n/R6p6jxyqf2AU1QzWvVzq5bRK53GqpjGqvVcGYWBnW2c7a++28aAB7N9t2kC5n65GP/tTvnUfOEC3jFhLwA2/GfaA2wlA8kFhPwlC0k37S70iI7BfAdoGt5GnP+gYcARfvfAV5EZgXkWWcE8AcyA+s1oJ/Ad2lOgA/KblI+CmgidKklwA3UolKA1vT4gWI/YyI8e+VUAAAAAElFTSuQmCC'), auto;
     }
-    #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; display: flex; justify-content: center; align-items: center; z-index: 1000; flex-direction: column; transition: opacity 0.8s ease-out; }
-    #preloader p { font-size: 24px; text-shadow: 0 0 10px var(--primary-color); animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0% { opacity: 1; text-shadow: 0 0 10px var(--primary-color); } 50% { opacity: 0.4; text-shadow: 0 0 20px var(--secondary-color); } 100% { opacity: 1; text-shadow: 0 0 10px var(--primary-color); } }
+
+    #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; display: flex; justify-content: center; align-items: center; z-index: 10000; flex-direction: column; }
+    #preloader p { font-size: 20px; font-family: var(--font-family-pixel); text-shadow: 0 0 8px var(--primary-color); animation: blink 1s step-end infinite; }
+
     #site-container {
-        width: 100vw; height: 100vh; border: 5px double var(--primary-color); box-shadow: 0 0 25px var(--primary-color), inset 0 0 20px rgba(0, 255, 255, 0.3);
-        background-color: var(--container-bg); padding: 20px; box-sizing: border-box; display: none; flex-direction: column;
+        max-width: 960px; 
+        margin: 20px auto;
+        border: 4px outset #444; 
+        box-shadow: 0 0 25px var(--primary-color);
+        background-color: var(--container-bg); 
+        padding: 10px; box-sizing: border-box; 
+        display: none; 
+        flex-direction: column;
     }
-    main { flex-grow: 1; overflow-y: auto; padding-right: 15px; margin-top: 10px; }
-    main::-webkit-scrollbar { width: 12px; }
-    main::-webkit-scrollbar-track { background: #111; border: 1px solid var(--primary-color); }
-    main::-webkit-scrollbar-thumb { background: var(--primary-color); box-shadow: 0 0 10px var(--primary-color); }
-    header { text-align: center; }
-    .title-container { display: flex; justify-content: center; align-items: center; gap: 25px; }
-    .title-icon { height: 120px; width: auto; filter: drop-shadow(0 0 10px var(--secondary-color)); }
-    header h1 { font-size: 2.5rem; text-shadow: 0 0 5px #fff, 0 0 15px var(--primary-color), 0 0 30px var(--secondary-color); margin: 0; }
-    nav { border-top: 1px dashed var(--primary-color); border-bottom: 1px dashed var(--primary-color); padding: 10px 0; margin-top:10px; }
-    nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; margin: 0; padding: 0;}
-    nav a { color: var(--primary-color); text-decoration: none; font-size: 1.2rem; padding: 5px 10px; }
-    nav a:hover, nav a.active { color: #000; background-color: var(--primary-color); box-shadow: 0 0 10px var(--primary-color); }
-    .story-section { max-width: 900px; margin: 40px auto; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-    .story-section.visible { opacity: 1; transform: translateY(0); }
-    .story-box { background: rgba(0, 0, 5, 0.7); border: 2px outset #555; padding: 20px; display: flex; gap: 20px; align-items: center; }
+
+    main { overflow-y: auto; padding-right: 15px; margin-top: 10px; height: 60vh; border: 2px inset #333; }
+    main::-webkit-scrollbar { width: 15px; }
+    main::-webkit-scrollbar-track { background: url('data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');  border: 1px solid var(--primary-color); }
+    main::-webkit-scrollbar-thumb { background: var(--primary-color); border: 1px outset var(--primary-color); }
+
+    header { text-align: center; border: 2px inset #333; padding: 10px; }
+    header marquee { font-family: var(--font-family-pixel); font-size: 2rem; text-shadow: 0 0 5px #fff, 0 0 15px var(--primary-color), 0 0 20px var(--primary-color); }
+    .title-container { display: flex; justify-content: center; align-items: center; gap: 20px; }
+    .title-icon { height: 64px; width: 64px; image-rendering: pixelated; }
+
+    .status-bar {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        text-shadow: 0 0 5px var(--secondary-color);
+    }
+
+    nav { border-top: 2px outset #555; border-bottom: 2px outset #555; padding: 5px 0; margin-top:10px; background: rgba(0,0,0,0.4); }
+    nav ul { list-style-image: url('data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP//ACH5BAEAAAEALAAAAAAKAAoAAAIRjA2ZxJrcfGgcB1kHxlkFADs=');  list-style-position: inside; display: flex; justify-content: center; gap: 15px; margin: 0; padding: 0;}
+    nav a { color: var(--accent-color); text-decoration: none; font-size: 1.1rem; padding: 3px 8px; font-weight: bold; }
+    nav a:hover, nav a.active { color: #000; background-color: var(--primary-color); text-decoration: underline; animation: glitch 0.3s infinite; }
+    @keyframes glitch { 0%, 100% { transform: translate(0,0); } 25% { transform: translate(-2px, 2px); } 50% { transform: translate(2px, -2px); } 75% { transform: translate(-2px, -2px); } }
+
+    .story-section { margin: 30px 10px; }
+    .story-box { background: rgba(0, 0, 5, 0.7); border: 3px double #555; padding: 15px; display: flex; gap: 15px; align-items: center; }
     .story-box.right { flex-direction: row-reverse; }
+
     .character-sprite { flex-shrink: 0; text-align: center; }
-    .character-sprite img { width: 128px; height: 128px; image-rendering: pixelated; filter: drop-shadow(0 0 8px var(--secondary-color)); animation: float 3s ease-in-out infinite; }
-    .character-sprite figcaption { margin-top: 10px; color: var(--secondary-color); font-size: 1rem; }
-    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-    .story-text h2 { font-size: 1.8rem; margin: 0 0 15px 0; text-shadow: 0 0 5px var(--secondary-color); }
-    .story-text p { font-size: 1rem; color: #b0b0d0; line-height: 1.6; text-align: justify; }
-    .cursor { display: inline-block; width: 10px; height: 1rem; background-color: var(--primary-color); animation: blink 1s step-end infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-    .divider { height: 1px; border: none; background: linear-gradient(to right, transparent, var(--primary-color), transparent); box-shadow: 0 0 10px var(--primary-color); margin: 60px auto; }
-    footer { text-align: center; padding-top: 20px; margin-top: 20px; border-top: 1px dashed var(--primary-color); font-size: 0.8rem; color: #606080; }
-    .social-links a { color: var(--primary-color); text-decoration: none; margin: 0 15px; font-size: 1rem; }
-    .social-links a:hover { color: var(--secondary-color); text-shadow: 0 0 8px var(--secondary-color); }
+    .character-sprite img { width: 96px; height: 96px; image-rendering: pixelated; border: 2px outset var(--accent-color); animation: float 3s ease-in-out infinite; }
+    .character-sprite figcaption { margin-top: 5px; color: var(--secondary-color); font-family: var(--font-family-pixel); font-size: 0.9rem; }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
+
+    .story-text h2 { font-family: var(--font-family-pixel); font-size: 1.5rem; margin: 0 0 10px 0; text-shadow: 0 0 5px var(--secondary-color); }
+    .story-text p { font-size: 1rem; color: #b0e0b0; line-height: 1.5; text-align: left; }
+    .cursor { display: inline-block; width: 10px; height: 1rem; background-color: var(--primary-color); animation: blink 0.8s step-end infinite; }
+    @keyframes blink { 50% { visibility: hidden; } }
+
+    .divider { height: 2px; border: none; background: var(--primary-color); box-shadow: 0 0 10px var(--primary-color); margin: 40px auto; }
+
+    footer { text-align: center; padding-top: 15px; margin-top: 15px; border-top: 2px outset #555; font-size: 0.8rem; color: #608060; }
+    .webring a, .social-links a { color: var(--accent-color); text-decoration: underline; margin: 0 10px; font-weight:bold; }
+    .webring a:hover, .social-links a:hover { color: var(--secondary-color); background-color: #333; }
 </style>
 </head>
 <body>
 
-    <div id="preloader"><p>COMPILANDO BIOGRAFIA...</p></div>
+    <audio src="aqua.mp3" autoplay loop hidden></audio>
+    
+    <div id="preloader"><p>LOADING_CONTENT.BAT...</p></div>
 
     <div id="site-container">
         <header>
             <div class="title-container">
-                
-                <img src="HM.png" alt="Icon 1" class="title-icon">
-                
-                <h1>Dr. Nhinhi</h1>
-                <img src="KT.png" alt="Icon 2" class="title-icon">
+                <img src="HM.png" alt="Miku" class="title-icon">
+                <marquee scrollamount="8" behavior="alternate"><h1>Dr. Nhinhi</h1></marquee>
+                <img src="KT.png" alt="Teto" class="title-icon">
             </div>
+             <p class="status-bar">
+                <img src="https://www.fg-a.com/online.gif" alt="Online Status" style="vertical-align: middle; height: 20px;">
+                Status: ONLINE
+             </p>
 
-            
             <nav>
                 <ul>
-                    <li><a href="index.html" onmouseover="playHoverSound()">Home</a></li>
-                    <li><a href="projetos.html" onmouseover="playHoverSound()">Projetos</a></li>
-                    <li><a href="sobre.html" class="active" onmouseover="playHoverSound()">Sobre</a></li>
-                    <li><a href="contato.html" onmouseover="playHoverSound()">Contato</a></li>
+                    <li><a href="index.html">H_O_M_E</a></li>
+                    <li><a href="projetos.html">PRJCTS</a></li>
+                    <li><a href="sobre.html" class="active">A_B_O_U_T</a></li>
+                    <li><a href="contato.html">CONTACT.TXT</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            
+
             <section class="story-section">
                 <div class="story-box">
                     <div class="character-sprite">
                         <img src="https://yt3.googleusercontent.com/RXKf9GV_0X6cLsbgqkZ9LaRSo3YMrnF1qZ3GK18dSdQMcrvFsKnjerjTCfVJcpoJ64GOzw6TCsI=s160-c-k-c0x00ffffff-no-rj" alt="Avatar Dr. Nhinhi">
-                        <figcaption>:: Dr. Nhinhi ::</figcaption>
+                        <figcaption>:: user
                     </div>
                     <div class="story-text">
-                        
-                        <h2>LOG IN: QUEM SOU EU?</h2>
-                        <p class="typewriter" data-text="Bom, meu apelido é Dr. Nhinhi. Não, não faz sentido. Sim, é uma longa história. Eu sou o fantasma na máquina por trás dos projetos que você vai encontrar por aqui, o cara que mantém as luzes (de neon) acesas e garante que os bugs não criem vida própria. Pelo menos não em 40% das vezes."></p>
+                        <h2>LOG_IN: ID_CARD</h2>
+                        <p class="typewriter" data-text="Bom, meu apelido e Dr. Nhinhi. Nao, nao faz sentido. Sim, e uma longa historia. Eu sou o fantasma na maquina por tras dos projetos que voce vai encontrar por aqui, o cara que mantem as luzes (de neon) acesas e garante que os bugs nao criem vida propria. Pelo menos nao em 40% das vezes."></p>
                     </div>
                 </div>
             </section>
 
-            
             <section class="story-section">
                 <div class="story-box right">
                      <div class="character-sprite">
                         <img src="https://i.gifer.com/embedded/download/GS3r.gif" alt="cara modelando bonecos">
-                        <figcaption>:: O Fantasma na Máquina ::</figcaption>
+                        <figcaption>:: O Fantasma na Maquina ::</figcaption>
                     </div>
                     <div class="story-text">
-                        
-                        <h2>COM UMAS AJUDINHAS</h2>
-                        <p class="typewriter" data-text="Eu construo a maior parte dos meus projetos sozinho, mas não sou um eremita digital. As melhores ideias muitas vezes vêm de colaboradores. No fim do dia, sou eu quem aperta os parafusos e escolhe as cores cafonas. Meus projetos têm alma, prometo. Alma de um fliperama abandonado."></p>
+                        <h2>SYSTEM_ALLIES</h2>
+                        <p class="typewriter" data-text="Eu construo a maior parte dos meus projetos sozinho, mas nao sou um eremita digital. As melhores ideias muitas vezes vem de colaboradores. No fim do dia, sou eu quem aperta os parafusos e escolhe as cores cafonas. Meus projetos tem alma, prometo. Alma de um fliperama abandonado."></p>
                     </div>
                 </div>
             </section>
 
             <hr class="divider">
 
-            
             <section class="story-section">
                 <div class="story-box">
                     <div class="story-text">
-                        <h2>CAPÍTULO 1: A QUEDA (E O QUE APRENDI)</h2>
-                        <p class="typewriter" data-text="Entre 2023 e 2024, eu liderei a 'Leopardus Team'. O plano? Dominar o mundo digital: jogos, sites, sistemas operacionais, o que desse na telha. Éramos ambiciosos. Acabou que a liderança, a gerência e o trabalho de zelador caíram no meu colo. Aprendi na marra sobre gestão de projetos, motivação de equipe e, principalmente, sobre os limites do 'fazer tudo sozinho'."></p>
+                        <h2>chptr_1: SYS_CRASH</h2>
+                        <p class="typewriter" data-text="Entre 2023 e 2024, eu liderei a 'Leopardus Team'. O plano? Dominar o mundo digital: jogos, sites, sistemas operacionais... Eramos ambiciosos. Acabou que a lideranca, a gerencia e o trabalho de zelador cairam no meu colo. Aprendi na marra sobre gestao de projetos, motivacao de equipe e, principalmente, sobre os limites do 'fazer tudo sozinho'."></p>
                         <br>
-                        <p class="typewriter" data-text="A equipe se dissolveu. Foi um Endgame feio, misturado com um burnout pessoal que quase me deletou da existência (literalmente <img src='cry.png' width='16' height='16' alt='teto chorando 💔'>). Essa experiência me deu mais desesperança e nihilismo e me fez tornar o que sou hoje!! 🦅🦅🦅🦅"> </p>            
+                        <p class="typewriter" data-text="A equipe se dissolveu. Foi um Endgame feio, misturado com um burnout pessoal que quase me deletou da existencia (literalmente <img src='cry.png' width='16' height='16' alt='teto chorando 💔'>). Essa experiencia me deu mais desesperanca e nihilismo e me fez tornar o que sou hoje!! 🦅🦅🦅🦅"></p>
                     </div>
                 </div>
             </section>
 
-            
             <section class="story-section">
                 <div class="story-box right">
                      <div class="story-text">
-                        <h2>CAPÍTULO 2: O RESPAWN (O PROJETO 'PARDUS')</h2>
-                        <p class="typewriter" data-text="Depois da tempestade, comecei a codificar como distração Foi aí que Maxwell apareceu com uma side-quest: 'um site de jogos só nosso, pra usar na escola'. Era uma ideia simples, nascida da frustração com sites cheios de lixo. No início, ignorei."></p>
+                        <h2>chptr_2: RE:SPAWN ('PARDUS')</h2>
+                        <p class="typewriter" data-text="Depois da tempestade, comecei a codificar como distracao. Foi ai que Maxwell apareceu com uma side-quest: 'um site de jogos so nosso, pra usar na escola'. Ignorei."></p>
                         <br>
-                        
-                        <p class="typewriter" data-text="O plot twist? Um clube de programação exigiu um projeto sério. A side-quest virou a main quest. Aquela ideia simples se tornou o Pardus Play Palace, um desafio para aplicar tudo que eu sabia de HTML, CSS e JavaScript para criar uma experiência de usuário limpa, funcional e com... estilo. Foi o projeto que desfez o estalar de dedos."></p>
+                        <p class="typewriter" data-text="O plot twist? Um clube de programacao exigiu um projeto serio. A side-quest virou a main quest. Aquela ideia simples se tornou o Pardus Play Palace, um desafio para aplicar tudo que eu sabia e criar uma experiencia limpa. Foi o projeto que desfez o estalar de dedos."></p>
                     </div>
                 </div>
             </section>
 
-            
             <section class="story-section">
                 <div class="story-box">
                      <div class="story-text">
-                        <h2>O ESTADO ATUAL (E O PRÓXIMO NÍVEL)</h2>
-                        <p class="typewriter" data-text="Essa não é uma daquelas histórias de garagem que viram uma empresa bilionária. É a minha. Meio torta, cheia de bugs existenciais e remendada com código e resiliência. Essa jornada me tornou o desenvolvedor que sou hoje: alguém que entende que falhar é só uma forma de debugar a vida."></p>
+                        <h2>CURRENT_STATE (NEXT_LVL)</h2>
+                        <p class="typewriter" data-text="Essa nao e uma daquelas historias de garagem que viram uma empresa bilionaria. E a minha. Meio torta, cheia de bugs existenciais e remendada com codigo. Essa jornada me tornou o dev que sou hoje: alguem que entende que falhar e so uma forma de debugar a vida."></p>
                         <br>
-                        
-                        <p class="typewriter" data-text="Agora, chega de papo e vai fuçar algo."> </p>
+                        <p class="typewriter" data-text="Agora, chega de papo e vai fucar algo."></p>
                     </div>
                 </div>
             </section>
         </main>
 
-        
         <footer>
-            <p style="margin-top: 20px;">© Ninguém, nada é serio</p>
+
+            <img src="https://gifcities.org/assets/images/badges/counter.gif" alt="Visitor Counter">
+            <p style="margin-top: 10px;">
+
+               <div class="webring">[ <a href="#">Previous</a> | <a href="#">Random</a> | <a href="#">Next</a> ]</div>
+            </p>
+            <p>© Ninguém, nada é serio- ANTEDEGUEMON </p>
         </footer>
     </div>
 
-    
     <script>
+
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             const container = document.getElementById('site-container');
@@ -181,32 +219,20 @@
             }, 1500);
         });
 
-        const hoverAudio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU'+Array(1e3).join('123'));
-        function playHoverSound() {
-            hoverAudio.currentTime = 0;
-            hoverAudio.play();
-        }
-        
-        // --- EFEITO MÁQUINA DE ESCREVER E ANIMAÇÃO DE SCROLL (VERSÃO CORRIGIDA) ---
-        
-        // Função para o efeito de máquina de escrever (inalterada)
-        function typeWriter(element, text, speed = 30) {
+        function typeWriter(element, text, speed = 40) { 
             let i = 0;
-            element.innerHTML = ""; // Limpa o conteúdo para iniciar a animação
-            const cursor = '<span class="cursor"></span>';
+            element.innerHTML = "";
+            const cursor = '<span class="cursor">|</span>'; 
             element.innerHTML = cursor;
-            
+
             function type() {
                 if (i < text.length) {
-                    // Aqui usamos text.substring para não interpretar tags HTML no meio da digitação
-                    element.innerHTML = text.substring(0, i + 1) + cursor;
+                    element.innerHTML = text.substring(0, i + 1).replace(/<img[^>]*>/g, (match) => match) + cursor;
                     i++;
                     setTimeout(type, speed);
                 } else {
-                    // No final, insere o conteúdo HTML completo para renderizar imagens e etc
                     element.innerHTML = text; 
-                    const finalCursor = element.querySelector('.cursor');
-                    if(finalCursor) finalCursor.style.animation = 'blink 1s step-end infinite';
+
                 }
             }
             type();
@@ -218,22 +244,13 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.add('visible'); 
 
                         const paragraphs = entry.target.querySelectorAll('.typewriter');
                         paragraphs.forEach(p => {
                             if (!p.hasAttribute('data-typed')) {
-                                
-                                // ========= LÓGICA CORRIGIDA =========
-                                // 1. Tenta pegar o texto do 'data-text'. É a prioridade.
                                 let textToAnimate = p.getAttribute('data-text');
-                                
-                                // 2. Se não houver 'data-text', pega o conteúdo que já está dentro do parágrafo.
-                                if (!textToAnimate) {
-                                    textToAnimate = p.innerHTML;
-                                }
-
-                                // 3. Se houver algo para animar, executa.
+                                if (!textToAnimate) textToAnimate = p.innerHTML;
                                 if (textToAnimate && textToAnimate.trim() !== '') {
                                     typeWriter(p, textToAnimate);
                                     p.setAttribute('data-typed', 'true');
@@ -243,15 +260,11 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.1 });
 
             storySections.forEach(section => {
-                // Antes de observar, garante que os parágrafos que usam data-text estejam vazios para a animação começar do zero
                 const paragraphsToAnimate = section.querySelectorAll('.typewriter[data-text]');
-                paragraphsToAnimate.forEach(p => {
-                    p.innerHTML = '';
-                });
-
+                paragraphsToAnimate.forEach(p => { p.innerHTML = ''; });
                 observer.observe(section);
             });
         });
